@@ -1,38 +1,54 @@
-.header {
-    background: #000;
+body {
+    max-width: 1512px;
+    height: 982px;
 }
 
-.header__inner {
-    margin: 0 auto;
-    padding: 20px 15px;
-    max-width: 1230px;
+.header {
+    border: solid 1px #E0DFDE;
+    background-color: #FFFFFF;
+    position: relative;
+    height: 100px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .header__logo {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 24px;
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    font-weight: 400;
+    color: #8B7969;
+    margin: auto 0;
+    font-family: "Newsreader", serif;
 }
 
-.confirm__content {
-    margin: 0 auto;
-    padding: 30px 15px;
-    max-width: 1230px;
+main {
+    display: flex;
+    justify-content: space-between;
 }
 
-.confirm__heading {
-    margin-bottom: 40px;
+.contact-form__content {
+    margin: 0px auto;
+}
+
+.contact-form__heading {
     text-align: center;
+    font-family: "Newsreader", serif;
+    font-size: 35px;
+    margin: 60px auto 0 auto;
+    font-weight: 400;
+    color: #8B7969;
 }
 
 .form {
     margin: 0 auto;
-    width: 70%;
+    width: 972px;
 }
 
 .confirm-table {
-    border: 1px solid #ddd;
+    border: 1px solid #E0DFDE;
 }
 
 .confirm-table__inner {
@@ -40,16 +56,24 @@
 }
 
 .confirm-table__header {
-    padding: 15px;
-    width: 20%;
+    width: 300px;
     border-bottom: 1px solid #ddd;
-    background-color: #eee;
-    font-weight: bold;
+    background-color: #8B7969;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 .confirm-table__text {
     padding: 15px;
     border-bottom: 1px solid #ddd;
+    color: #8B7969;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.detail{
+    height: 110px;
 }
 
 .confirm-table__text input {
@@ -64,17 +88,25 @@
 }
 
 .form__button {
-    margin-top: 30px;
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
 }
 
 .form__button-submit {
-    padding: 10px;
-    width: 30%;
-    height: 50px;
+    color: #FFFFFF;
+    font-size: 20px;
+    background-color: #82756A;
+    margin: 40px 10px auto 400px;
+    padding: 10px 40px;
     border: none;
-    border-radius: 3px;
-    background: #000;
-    color: #fff;
     cursor: pointer;
+}
+
+.form__link{
+    margin: 50px auto auto 80px;
+}
+
+.form__link-correction{
+    color: #8B7969;
+    font-size: 20px;
 }

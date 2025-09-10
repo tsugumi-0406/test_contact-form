@@ -1,0 +1,194 @@
+body {
+    width: 1512px;
+    height: 982px;
+}
+
+.header {
+    border: solid 1px #E0DFDE;
+    background-color: #FFFFFF;
+    position: relative;
+    height: 100px;
+    /* ヘッダーの高さを指定 */
+    display: flex;
+    justify-content: flex-end;
+    /* ボタンを右に寄せる */
+}
+
+.header__logo {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    font-weight: 400;
+    color: #8B7969;
+    margin: auto 0;
+    font-family: "Newsreader", serif;
+}
+
+.header__button-submit {
+    border: solid 1px #D9C6B5;
+    border-radius: 3px;
+    color: #D9C6B5;
+    font-family: Register;
+    width: 100px;
+    height: 34px;
+    position: absolute;
+    right: 146px;
+    top: 16px;
+    cursor: pointer;
+    font-family: "Newsreader", serif;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-form__content {
+    margin: 0px auto;
+}
+
+.contact-form__heading {
+    text-align: center;
+    font-family: "Newsreader", serif;
+    font-size: 35px;
+    margin: 60px auto 0 auto;
+    font-weight: 400;
+    color: #8B7969;
+}
+
+/* ベース */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+}
+
+.modal:target {
+    display: block;
+}
+
+/* 背景オーバーレイ */
+.modal .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    display: block;
+}
+
+/* ダイアログ本体 */
+.modal .content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(90vw, 520px);
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .25);
+}
+
+/* 閉じるボタン */
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #666;
+}
+
+.open {
+    display: inline-block;
+    padding: .6em 1em;
+    background: #2563eb;
+    color: #fff;
+    border-radius: .5em;
+    text-decoration: none;
+}
+
+</style>ポイント href="#modal1" で開き、href="#" で閉じます。 ブラウザの“戻る”で閉じられるのが便利。 URLにハッシュが付く（#modal1）点は許容が必要。 2) チェックボックスハック（フォーム要素でトグル） ハッシュを汚したくない場合に便利。 html コードをコピーする <label for="modal-toggle" class="open">モーダルを開く</label><input type="checkbox" id="modal-toggle" hidden><div class="modal2" role="dialog" aria-modal="true" aria-labelledby="modal2-title"><label for="modal-toggle" class="overlay" aria-hidden="true"></label><div class="content" role="document"><h2 id="modal2-title">チェックボックス版</h2><p>URLハッシュを使いません。</p><label for="modal-toggle" class="close" aria-label="閉じる">×</label></div></div><style>#modal-toggle~.modal2 {
+    display: none;
+}
+
+#modal-toggle:checked~.modal2 {
+    display: block;
+}
+
+.modal2 {
+    position: fixed;
+    inset: 0;
+}
+
+.modal2 .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    display: block;
+}
+
+.modal2 .content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(90vw, 520px);
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .25);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    cursor: pointer;
+}
+
+.open {
+    display: inline-block;
+    padding: .6em 1em;
+    background: #16a34a;
+    color: #fff;
+    border-radius: .5em;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+</style>ポイント label for でチェックON/OFFして表示を切り替え。 履歴を汚さない。 <input>のDOM配置（兄弟関係）に注意（上記のように~セレクタで制御）。 3) <details>/<summary>を使う（超簡単） ネイティブ開閉UIを利用。見出しクリックで開閉。 html コードをコピーする <details class="modal3"><summary class="open">モーダルを開く</summary><div class="overlay"></div><div class="content" role="dialog" aria-modal="true" aria-labelledby="modal3-title"><h2 id="modal3-title">details版</h2><p>最小コードでOK。ただしアクセシビリティ調整は弱め。</p></div></details><style>.modal3 {
+    position: relative;
+}
+
+.modal3[open] .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+}
+
+.modal3[open] .content {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(90vw, 520px);
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .25);
+}
+
+.open {
+    list-style: none;
+    padding: .6em 1em;
+    background: #f59e0b;
+    color: #111;
+    border-radius: .5em;
+    cursor: pointer;
+}
+
+.open::-webkit-details-marker {
+    display: none;
+}
